@@ -1,0 +1,26 @@
+{
+  "name": "softuni-cube-exercise",
+  "version": "1.0.0",
+  "description": "SoftUni Cuber Project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benalgins/softuni-cube-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benalgins/softuni-cube-exercise/issues"
+  },
+  "homepage": "https://github.com/Benalgins/softuni-cube-exercise#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
