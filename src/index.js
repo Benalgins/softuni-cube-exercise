@@ -13,5 +13,8 @@ handlebarsConfig(app);
 
 app.use(homeController);
 app.use('/cube', cubeController);
+app.get('*', (req, res) => {
+  res.redirect('/404');
+});
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
