@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cuid = require('cuid');
+const cubeManager = require('../manager/cubeManager');
 
 let cubes = [];
 
@@ -11,14 +11,12 @@ router.get('/create', (req, res) => {
 router.post('/create', (req, res) => {
   const { name, description, imageUrl, difficultyLevel } = req.body;
 
-  cubes.push({
-    id: cuid(),
+  cubeManager.create({
     name,
     description,
     imageUrl,
     difficultyLevel: Number(difficultyLevel),
   });
-  console.log(cubes);
 
   res.redirect('/');
 });
