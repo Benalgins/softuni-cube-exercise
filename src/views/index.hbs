@@ -17,13 +17,17 @@
     />
     <input type='submit' value='search' />
   </form>
-  {{#each cubes}}
-    <div class='cube'>
-      <img class='cube' src='{{imageUrl}}' />
-      <p class='name'>{{name}}</p>
-      <p><span>Difficulty level:</span> {{difficultyLevel}}</p>
-      <a class='btn' href='/details/5c39f1851ab3b24f5c03e183'>Details</a>
-    </div>
-  {{/each}}
+  {{#if cubes}}
+    {{#each cubes}}
+      <div class='cube'>
+        <img class='cube' src='{{imageUrl}}' />
+        <p class='name'>{{name}}</p>
+        <p><span>Difficulty level:</span> {{difficultyLevel}}</p>
+        <a class='btn' href='/cube/{{id}}/details'>Details</a>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>There are no cubes yet, go ahead and add the FIRST!</p>
+  {{/if}}
 
 </main>
