@@ -4,12 +4,17 @@ const expressConfig = require('./config/expressConfiguration');
 const handlebarsConfig = require('./config/handlebarsConfiguration');
 const homeController = require('./controllers/homeController');
 const cubeController = require('./controllers/cubeController');
+const dbConnect = require('./config/dbConfig');
 
 const app = express();
 const PORT = 5000;
 
 expressConfig(app);
 handlebarsConfig(app);
+
+dbConnect()
+  .then(() => console.log('DB connected'))
+  .catch((err) => console.log(err));
 
 app.use(homeController);
 app.use('/cube', cubeController);
