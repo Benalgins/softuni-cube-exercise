@@ -3,7 +3,7 @@ const router = express.Router();
 const cubeManager = require('../manager/cubeManager');
 
 router.get('/create', (req, res) => {
-  res.render('create');
+  res.render('createCube');
 });
 
 router.post('/create', async (req, res) => {

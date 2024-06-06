@@ -4,6 +4,7 @@ const expressConfig = require('./config/expressConfiguration');
 const handlebarsConfig = require('./config/handlebarsConfiguration');
 const homeController = require('./controllers/homeController');
 const cubeController = require('./controllers/cubeController');
+const accesoryController = require('./controllers/accesoryController');
 const dbConnect = require('./config/dbConfig');
 
 const app = express();
@@ -18,6 +19,7 @@ dbConnect()
 
 app.use(homeController);
 app.use('/cube', cubeController);
+app.use('/accesorry', accesoryController);
 app.get('*', (req, res) => {
   res.redirect('/404');
 });
