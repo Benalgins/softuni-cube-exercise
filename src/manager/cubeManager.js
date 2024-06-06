@@ -1,4 +1,5 @@
 const cuid = require('cuid');
+const Cube = require('../models/Cube');
 
 let cubes = [];
 
@@ -18,11 +19,9 @@ exports.getAll = (search, from, to) => {
   return result;
 };
 
-exports.create = (cubeData) => {
-  const newCube = {
-    id: cuid(),
-    ...cubeData,
-  };
-  cubes.push(newCube);
-  return newCube;
+exports.create = async (cubeData) => {
+  const cube = new Cube(cubeData);
+  await cube.save();
+
+  return cube;
 };
