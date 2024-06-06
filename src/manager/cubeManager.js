@@ -1,4 +1,3 @@
-const cuid = require('cuid');
 const Cube = require('../models/Cube');
 
 exports.getAll = async (search, from, to) => {

@@ -19,7 +19,7 @@ dbConnect()
 
 app.use(homeController);
 app.use('/cube', cubeController);
-app.use('/accesorry', accesoryController);
+app.use('/accessory', accesoryController);
 app.get('*', (req, res) => {
   res.redirect('/404');
 });
