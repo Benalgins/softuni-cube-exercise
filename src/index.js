@@ -14,7 +14,7 @@ handlebarsConfig(app);
 
 dbConnect()
   .then(() => console.log('DB connected'))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log('DB Error', err));
 
 app.use(homeController);
 app.use('/cube', cubeController);
